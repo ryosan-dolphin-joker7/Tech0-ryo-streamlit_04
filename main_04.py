@@ -24,27 +24,6 @@ df = pd.DataFrame(
 )
 edited_df = st.data_editor(df)
 
-#ボタン
-st.title("今日の天気は")
-st.button("リセット", type="primary")
-if st.button("晴れ？"):
-    st.write("今日も元気に！")
-else:
-    st.write("傘を忘れずに!")
-
-#テキスト入力
-st.title("やること")
-st.text_input("今やること", key="do")
-st.session_state.do #keyでアクセス
-
-#チェックボックス
-st.title("ごみ捨てチェック")
-is_agree = st.checkbox("ごみ捨てた？")
-if is_agree:
-    st.write("お疲れ様！")
-else:
-    st.write("忘れずに！")
-
 # レイアウトとして２列を定義
 col1, col2 = st.columns(2)
 
@@ -59,23 +38,6 @@ with col2:
 
 
 st.sidebar.write("hello world") #.sidebar付けるとサイトバーに出力されます。
-st.text_input("ここに文字が入力できます。") # テキストを入力できます。
-
-
-# 選択肢を配列で指定して選択肢を出力します。
-st.selectbox("選んでください。",["選択肢1","選択肢2","選択肢3"])
-
-
-
-# ダウンロードする文字を定義し、output_textに代入します。
-output_text = "この文字がダウンロードされます"
-
-# 代入された文字をダウンロードするボタンを設置。オプションは内容をdataに指定、ファイル名をfile_nameに指定、ファイルタイプをmimeに指定
-st.download_button(label='記事内容 Download', 
-                data=output_text, 
-                file_name='out_put.txt',
-                mime='text/plain',
-                )
 
 
 
